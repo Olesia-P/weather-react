@@ -1,0 +1,38 @@
+.CitySection {
+  background: #eaf6f6;
+  grid-area: city;
+  text-align: center;
+}
+
+.CitySection h1 {
+  font-size: 2rem;
+  text-decoration: underline dotted;
+  margin: 0.6rem 0;
+}
+
+.CitySection input {
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.4em;
+  font-size: var(--main-font-size);
+  box-shadow: var(--main-shadow);
+}
+
+.CitySection button {
+  margin-left: 0.5rem;
+  background: #f76b8a;
+  color: #000000;
+  border: 0.2rem outset #f76b8a;
+  border-radius: 0.4em;
+  padding: 0.5rem 1.5rem;
+  font-size: var(--main-font-size);
+}
+
+.CitySection button:hover {
+  filter: brightness(115%);
+}
+
+.CitySection button:active {
+  border: 0.2rem inset #f76b8a;
+}

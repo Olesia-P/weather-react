@@ -1,0 +1,25 @@
+.WeatherSection {
+  grid-area: weather;
+  background: #66bfbf;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 3fr));
+  font-size: var(--bigger-font-size);
+}
+
+.WeatherSection ul {
+  list-style-type: none;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+.WeatherSection li {
+  text-align: center;
+}
+
+.WeatherSection icon {
+  margin: 0 auto;
+}
+
+.WeatherSection img {
+  width: 6rem;
+}
