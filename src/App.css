@@ -32,3 +32,8 @@ body .App {
   border-radius: 30px;
   box-shadow: var(--main-shadow);
 }
+
+.App footer {
+  text-align: center;
+  font-size: 0.8rem;
+}

@@ -8,6 +8,12 @@ function App() {
       <main>
         <CitySection />
         <WeatherSection />
+        <footer>
+          <a href="https://github.com/Olesia-P/weather-react">
+            Open-source code{" "}
+          </a>
+          by Olesia Pryhun
+        </footer>
       </main>
     </body>
   );
