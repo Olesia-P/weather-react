@@ -1,22 +1,19 @@
 import React from "react";
 import "./WeatherSection.css";
 
-export default function WeatherSection() {
+export default function WeatherSection(props) {
   return (
     <section className="WeatherSection">
       <ul>
-        <li>10°C</li>
-        <li>Humidity 60%</li>
+        <li>{props.temperature}°C</li>
+        <li>{props.humidity} 60%</li>
       </ul>
       <icon>
-        <img
-          src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-          alt="Cloudy"
-        />
+        <img src={props.icon} alt={props.icon_description} />
       </icon>
       <ul>
-        <li>Sunny</li>
-        <li>Wind: 10m/h</li>
+        <li>{props.description}</li>
+        <li>Wind: {props.wind}m/h</li>
       </ul>
     </section>
   );
