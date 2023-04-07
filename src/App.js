@@ -6,7 +6,7 @@ import axios from "axios";
 
 function App() {
   const [loaded, setLoaded] = useState({ loaded: false });
-  const [city, setCity] = useState("Kyiv");
+  const [city, setCity] = useState(null);
   const [weather, setWeather] = useState(null);
 
   function showWeather(response) {
@@ -36,8 +36,8 @@ function App() {
           <CitySection
             city={city}
             setCity={setCity}
-            handlesubmit={handleSubmit}
-            props={weather}
+            handleSubmit={handleSubmit}
+            weather={weather}
           />
           <WeatherSection />
           <footer>
@@ -50,25 +50,7 @@ function App() {
       </body>
     );
   } else {
-    return (
-      <body className="App">
-        <main>
-          <CitySection
-            city={city}
-            setCity={setCity}
-            handlesubmit={handleSubmit}
-            props={weather}
-          />
-          <WeatherSection props={weather} />
-          <footer>
-            <a href="https://github.com/Olesia-P/weather-react">
-              Open-source code{" "}
-            </a>
-            by Olesia Pryhun
-          </footer>
-        </main>
-      </body>
-    );
+    return <div>Loading</div>;
   }
 }
 

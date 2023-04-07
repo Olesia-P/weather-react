@@ -1,20 +1,21 @@
 import React from "react";
 import "./CitySection.css";
 
-export default function CitySection({ setCity, city, handleSubmit, props }) {
+export default function CitySection({ setCity, city, handleSubmit, weather }) {
   function updateCity(event) {
     setCity(event.target.value);
   }
 
   return (
     <section className="CitySection">
-      <h1>{props.city}</h1>
+      <h1>{weather.city}</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Type a city..."
           autocomplete="off"
           onChange={updateCity}
+          value={city}
         />
         <button type="submit">Search</button>
       </form>
