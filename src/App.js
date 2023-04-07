@@ -5,9 +5,10 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function App() {
-  const [loaded, setLoaded] = useState({ loaded: false });
-  const [city, setCity] = useState(null);
-  const [weather, setWeather] = useState(null);
+  const [loaded, setLoaded] = useState(false);
+  const [city, setCity] = useState("Kyiv");
+  const [weather, setWeather] = useState("");
+  console.log(weather);
 
   function showWeather(response) {
     setWeather({
@@ -22,12 +23,20 @@ function App() {
     setLoaded(true);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function search() {
     const key = "f34eafbe5b20fo4443a0a3et0b481f5f";
     const url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
     axios.get(url).then(showWeather);
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  React.useEffect(() => {
+    search();
+  }, []);
 
   if (loaded) {
     return (
@@ -39,7 +48,7 @@ function App() {
             handleSubmit={handleSubmit}
             weather={weather}
           />
-          <WeatherSection />
+          <WeatherSection weather={weather} />
           <footer>
             <a href="https://github.com/Olesia-P/weather-react">
               Open-source code{" "}
