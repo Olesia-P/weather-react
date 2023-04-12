@@ -8,16 +8,14 @@ export default function WeatherSection({ weather }) {
   return (
     <section className="WeatherSection">
       <ul>
-        <li>{Math.round(temperature)}°C</li>
-        <li>{humidity}%</li>
+        <li className="temperature">{Math.round(temperature)}°C</li>
+        <li>Humidity: {humidity}%</li>
+        <li>{description}</li>
+        <li>Wind: {Math.round(wind)} km/h</li>
       </ul>
       <i>
         <Icons icon={icon} />
       </i>
-      <ul>
-        <li>{description}</li>
-        <li>Wind: {Math.round(wind)}m/h</li>
-      </ul>
     </section>
   );
 }

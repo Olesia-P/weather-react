@@ -2,13 +2,13 @@
   grid-area: weather;
   background: #66bfbf;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(10rem, 3fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 2fr));
   font-size: var(--bigger-font-size);
 }
 
 .WeatherSection ul {
   list-style-type: none;
-  padding: 1rem 0;
+  padding: 1rem 0rem 1rem 5rem;
   margin: 0 auto;
 }
 
@@ -16,10 +16,16 @@
   text-align: center;
 }
 
-.WeatherSection i {
-  margin: 0 auto;
+.WeatherSection li::first-letter {
+  text-transform: capitalize;
 }
 
-.WeatherSection img {
-  width: 6rem;
+.WeatherSection .temperature {
+  font-size: 2rem;
+}
+
+.WeatherSection i {
+  display: block;
+  margin: auto;
+  padding-right: 5rem;
 }
