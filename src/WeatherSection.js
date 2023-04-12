@@ -11,9 +11,9 @@ export default function WeatherSection({ weather }) {
         <li>{temperature}°C</li>
         <li>{humidity} 60%</li>
       </ul>
-      <icon>
+      <i>
         <img src={icon} alt={icon_description} />
-      </icon>
+      </i>
       <ul>
         <li>{description}</li>
         <li>Wind: {wind}m/h</li>

@@ -8,7 +8,6 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [city, setCity] = useState("Kyiv");
   const [weather, setWeather] = useState("");
-  console.log(weather);
 
   function showWeather(response) {
     setWeather({
@@ -41,7 +40,7 @@ function App() {
 
   if (loaded) {
     return (
-      <body className="App">
+      <div className="App">
         <main>
           <CitySection
             city={city}
@@ -57,7 +56,7 @@ function App() {
             by Olesia Pryhun
           </footer>
         </main>
-      </body>
+      </div>
     );
   } else {
     return <div>Loading</div>;

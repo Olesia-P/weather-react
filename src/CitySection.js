@@ -27,7 +27,7 @@ export default function CitySection({ setCity, city, handleSubmit, weather }) {
         <input
           type="text"
           placeholder="Type a city..."
-          autocomplete="off"
+          autoComplete="off"
           onChange={updateCity}
           value={city}
         />
