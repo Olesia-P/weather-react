@@ -1,22 +1,22 @@
 import React from "react";
 import "./WeatherSection.css";
+import Icons from "./Icons.js";
 
 export default function WeatherSection({ weather }) {
-  const { temperature, humidity, icon, icon_description, description, wind } =
-    weather;
+  const { temperature, humidity, description, wind, icon } = weather;
 
   return (
     <section className="WeatherSection">
       <ul>
-        <li>{temperature}°C</li>
+        <li>{Math.round(temperature)}°C</li>
         <li>{humidity}%</li>
       </ul>
       <i>
-        <img src={icon} alt={icon_description} />
+        <Icons icon={icon} />
       </i>
       <ul>
         <li>{description}</li>
-        <li>Wind: {wind}m/h</li>
+        <li>Wind: {Math.round(wind)}m/h</li>
       </ul>
     </section>
   );

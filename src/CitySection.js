@@ -16,9 +16,15 @@ export default function CitySection({ setCity, city, handleSubmit, weather }) {
     "Saturday",
   ];
 
-  const minutes = weather.date.getMinutes();
-  const hours = weather.date.getHours();
+  let minutes = weather.date.getMinutes();
+  let hours = weather.date.getHours();
   const day = weekDays[weather.date.getDay()];
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
 
   return (
     <section className="CitySection">
