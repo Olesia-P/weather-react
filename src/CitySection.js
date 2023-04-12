@@ -6,6 +6,20 @@ export default function CitySection({ setCity, city, handleSubmit, weather }) {
     setCity(event.target.value);
   }
 
+  const weekDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const minutes = weather.date.getMinutes();
+  const hours = weather.date.getHours();
+  const day = weekDays[weather.date.getDay()];
+
   return (
     <section className="CitySection">
       <h1>{weather.city}</h1>
@@ -19,7 +33,9 @@ export default function CitySection({ setCity, city, handleSubmit, weather }) {
         />
         <button type="submit">Search</button>
       </form>
-      <p>Last updated: Tuesday 10:00</p>
+      <p>
+        Last updated: {day} {hours}:{minutes}
+      </p>
     </section>
   );
 }

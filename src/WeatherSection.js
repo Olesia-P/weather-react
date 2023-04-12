@@ -2,12 +2,8 @@ import React from "react";
 import "./WeatherSection.css";
 
 export default function WeatherSection({ weather }) {
-  const { temperature } = weather;
-  const { humidity } = weather;
-  const { icon } = weather;
-  const { icon_description } = weather;
-  const { description } = weather;
-  const { wind } = weather;
+  const { temperature, humidity, icon, icon_description, description, wind } =
+    weather;
 
   return (
     <section className="WeatherSection">
