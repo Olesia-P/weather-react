@@ -9,7 +9,7 @@ export default function WeatherSection({ weather }) {
     <section className="WeatherSection">
       <ul>
         <li>{temperature}°C</li>
-        <li>{humidity} 60%</li>
+        <li>{humidity}%</li>
       </ul>
       <i>
         <img src={icon} alt={icon_description} />

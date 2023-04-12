@@ -1,7 +1,7 @@
 import "./App.css";
 import CitySection from "./CitySection.js";
 import WeatherSection from "./WeatherSection.js";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
@@ -34,8 +34,9 @@ function App() {
     search();
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     search();
+    // eslint-disable-next-line
   }, []);
 
   if (loaded) {
