@@ -21,9 +21,9 @@
 
 .CitySection button {
   margin-left: 0.5rem;
-  background: #f76b8a;
+  background: var(--accent-color);
   color: #000000;
-  border: 0.2rem outset #f76b8a;
+  border: 0.2rem outset var(--accent-color);
   border-radius: 0.4em;
   padding: 0.5rem 1.5rem;
   font-size: var(--main-font-size);
