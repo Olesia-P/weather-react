@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./WeatherSection.css";
 import Icons from "./Icons.js";
 import Temperature from "./Temperature.js";
