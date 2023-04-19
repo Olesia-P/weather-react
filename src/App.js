@@ -1,6 +1,7 @@
 import "./App.css";
 import CitySection from "./CitySection.js";
 import WeatherSection from "./WeatherSection.js";
+import ForecastSection from "./ForecastSection.js";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -49,6 +50,7 @@ function App() {
             weather={weather}
           />
           <WeatherSection weather={weather} />
+          <ForecastSection city={city} />
           <footer>
             <a href="https://github.com/Olesia-P/weather-react">
               Open-source code{" "}

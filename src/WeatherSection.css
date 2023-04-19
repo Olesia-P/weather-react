@@ -8,8 +8,9 @@
 
 .WeatherSection ul {
   list-style-type: none;
-  padding: 1rem 0rem 1rem 5rem;
-  margin: 0 auto;
+  padding-right: 1.5rem;
+  justify-self: end;
+  align-self: center;
 }
 
 .WeatherSection li {
@@ -25,7 +26,19 @@
 }
 
 .WeatherSection i {
-  display: block;
-  margin: auto;
-  padding-right: 5rem;
+  justify-self: start;
+  align-self: center;
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 500px) {
+  .WeatherSection i {
+    padding-left: 0;
+    margin: 0 auto;
+  }
+
+  .WeatherSection ul {
+    margin: 0 auto;
+    padding: 1rem 1rem;
+  }
 }

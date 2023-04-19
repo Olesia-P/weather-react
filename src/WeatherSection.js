@@ -12,8 +12,9 @@ export default function WeatherSection({ weather }) {
         <li className="temperature">
           <Temperature temperature={temperature} />
         </li>
-        <li>Humidity: {humidity}%</li>
         <li>{description}</li>
+        <li>Humidity: {humidity}%</li>
+
         <li>Wind: {Math.round(wind)} km/h</li>
       </ul>
       <i>
