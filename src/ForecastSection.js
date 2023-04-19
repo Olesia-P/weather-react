@@ -5,11 +5,13 @@ import axios from "axios";
 
 export default function ForecastSection({ city }) {
   const [forecastData, setForecastData] = useState("");
+  const [loaded, setLoaded] = useState(false);
 
   function handleForecast(response) {
     console.log(response.data);
 
     setForecastData(response);
+    setLoaded(true);
   }
 
   function searchForecast() {
@@ -25,16 +27,20 @@ export default function ForecastSection({ city }) {
   }, []);
 
   console.log(forecastData);
-  return (
-    <section className="ForecastSection">
-      <ul>
-        <Forecast forecastData={forecastData} day={1} />
-        {/* <Forecast forecast={forecast} day={2} />
+  if (loaded) {
+    return (
+      <section className="ForecastSection">
+        <ul>
+          <Forecast forecastData={forecastData} day={1} />
+          {/* <Forecast forecast={forecast} day={2} />
         <Forecast forecast={forecast} day={3} />
         <Forecast forecast={forecast} day={4} />
         <Forecast forecast={forecast} day={5} />
         <Forecast forecast={forecast} day={6} /> */}
-      </ul>
-    </section>
-  );
+        </ul>
+      </section>
+    );
+  } else {
+    <div>Loading...</div>;
+  }
 }
