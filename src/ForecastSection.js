@@ -4,12 +4,12 @@ import Forecast from "./Forecast.js";
 import axios from "axios";
 
 export default function ForecastSection({ city }) {
-  const [forecast, setForecast] = useState("");
+  const [forecastData, setForecastData] = useState("");
 
   function handleForecast(response) {
     console.log(response.data);
 
-    // setForecast(response);
+    setForecastData(response);
   }
 
   function searchForecast() {
@@ -20,14 +20,15 @@ export default function ForecastSection({ city }) {
 
   useEffect(() => {
     searchForecast();
+    console.log("test");
     // eslint-disable-next-line
   }, []);
 
-  console.log(forecast);
+  console.log(forecastData);
   return (
     <section className="ForecastSection">
       <ul>
-        {/* <Forecast forecast={forecast} day={1} /> */}
+        <Forecast forecastData={forecastData} day={1} />
         {/* <Forecast forecast={forecast} day={2} />
         <Forecast forecast={forecast} day={3} />
         <Forecast forecast={forecast} day={4} />
