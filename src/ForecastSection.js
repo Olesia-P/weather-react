@@ -30,14 +30,12 @@ export default function ForecastSection({ city }) {
   if (loaded) {
     return (
       <section className="ForecastSection">
-        <ul>
-          <Forecast forecastData={forecastData} day={1} />
-          {/* <Forecast forecast={forecast} day={2} />
-        <Forecast forecast={forecast} day={3} />
-        <Forecast forecast={forecast} day={4} />
-        <Forecast forecast={forecast} day={5} />
-        <Forecast forecast={forecast} day={6} /> */}
-        </ul>
+        <Forecast forecastData={forecastData} day={1} />
+        <Forecast forecastData={forecastData} day={2} />
+        <Forecast forecastData={forecastData} day={3} />
+        <Forecast forecastData={forecastData} day={4} />
+        <Forecast forecastData={forecastData} day={5} />
+        <Forecast forecastData={forecastData} day={6} />
       </section>
     );
   } else {

@@ -12,11 +12,11 @@ export default function Forecast({ forecastData, day }) {
   const { minTemp, maxTemp, time, icon } = singleForecast;
 
   return (
-    <li className="Forecast">
+    <div className="Forecast">
       <div>{time}</div>
       <div>{icon}</div>
       <div>{minTemp}°</div>
       <div>{maxTemp}°</div>
-    </li>
+    </div>
   );
 }

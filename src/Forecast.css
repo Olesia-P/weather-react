@@ -1,5 +1,3 @@
-.Forecast li {
-  padding: 0.5rem 0.5rem;
-  justify-self: center;
-  align-self: center;
+.Forecast {
+  padding: 1rem 1rem;
 }
