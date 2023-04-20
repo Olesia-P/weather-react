@@ -30,7 +30,7 @@ export default function ForecastSection({ city, weather }) {
 
   useEffect(() => {
     searchForecast();
-  }, [weather]);
+  }, [weather.city]);
 
   if (loaded) {
     return (
