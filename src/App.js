@@ -27,9 +27,6 @@ function App() {
     const key = "f34eafbe5b20fo4443a0a3et0b481f5f";
     const url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
     axios.get(url).then(showWeather);
-    axios.get(url).catch(function (error) {
-      <h1>{error.message}</h1>;
-    });
   }
 
   function handleSubmit(event) {
@@ -53,7 +50,7 @@ function App() {
             weather={weather}
           />
           <WeatherSection weather={weather} />
-          <ForecastSection city={city} />
+          <ForecastSection city={city} weather={weather} />
           <footer>
             <a href="https://github.com/Olesia-P/weather-react">
               Open-source code{" "}
