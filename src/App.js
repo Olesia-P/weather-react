@@ -11,16 +11,21 @@ function App() {
   const [weather, setWeather] = useState("");
 
   function showWeather(response) {
-    setWeather({
-      city: response.data.city,
-      temperature: response.data.temperature.current,
-      description: response.data.condition.description,
-      humidity: response.data.temperature.humidity,
-      wind: response.data.wind.speed,
-      date: new Date(response.data.time * 1000),
-      icon: response.data.condition.icon,
-    });
-    setLoaded(true);
+    console.log(response);
+    if (response.data.status === "not_found") {
+      setWeather((state) => ({ ...state, error: "error_text" }));
+    } else {
+      setWeather({
+        city: response.data.city,
+        temperature: response.data.temperature.current,
+        description: response.data.condition.description,
+        humidity: response.data.temperature.humidity,
+        wind: response.data.wind.speed,
+        date: new Date(response.data.time * 1000),
+        icon: response.data.condition.icon,
+      });
+      setLoaded(true);
+    }
   }
 
   function search() {
