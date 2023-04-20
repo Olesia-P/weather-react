@@ -8,8 +8,6 @@ export default function ForecastSection({ city }) {
   const [loaded, setLoaded] = useState(false);
 
   function handleForecast(response) {
-    console.log(response.data);
-
     setForecastData(response);
     setLoaded(true);
   }
@@ -22,11 +20,9 @@ export default function ForecastSection({ city }) {
 
   useEffect(() => {
     searchForecast();
-    console.log("test");
     // eslint-disable-next-line
   }, []);
 
-  console.log(forecastData);
   if (loaded) {
     return (
       <section className="ForecastSection">

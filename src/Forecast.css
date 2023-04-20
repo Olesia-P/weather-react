@@ -1,3 +1,7 @@
 .Forecast {
   padding: 1rem 1rem;
 }
+
+.Forecast .maxTemp {
+  color: #eaf6f6;
+}

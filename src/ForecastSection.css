@@ -4,4 +4,5 @@
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  font-size: var(--bigger-font-size);
 }

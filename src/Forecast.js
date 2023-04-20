@@ -1,8 +1,8 @@
 import React from "react";
 import "./Forecast.css";
+import Icons from "./Icons.js";
 
 export default function Forecast({ forecastData, day }) {
-  console.log(forecastData);
   let singleForecast = {
     minTemp: forecastData.data.daily[day].temperature.minimum,
     maxTemp: forecastData.data.daily[day].temperature.maximum,
@@ -11,12 +11,19 @@ export default function Forecast({ forecastData, day }) {
   };
   const { minTemp, maxTemp, time, icon } = singleForecast;
 
+  const date = new Date(time * 1000);
+  const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  const specificDay = weekDays[date.getDay()];
+
   return (
     <div className="Forecast">
-      <div>{time}</div>
-      <div>{icon}</div>
-      <div>{minTemp}°</div>
-      <div>{maxTemp}°</div>
+      <div>{specificDay}</div>
+      <div>
+        <Icons icon={icon} size={50} />
+      </div>
+      <div className="maxTemp">{Math.round(maxTemp)}°</div>
+      <div>{Math.round(minTemp)}°</div>
     </div>
   );
 }

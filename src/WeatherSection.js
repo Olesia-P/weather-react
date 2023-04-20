@@ -18,7 +18,7 @@ export default function WeatherSection({ weather }) {
         <li>Wind: {Math.round(wind)} km/h</li>
       </ul>
       <i>
-        <Icons icon={icon} />
+        <Icons icon={icon} size={140} />
       </i>
     </section>
   );
