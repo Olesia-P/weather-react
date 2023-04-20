@@ -29,7 +29,7 @@ export default function CitySection({ setCity, city, handleSubmit, weather }) {
   console.log(weather.error);
   return (
     <section className="CitySection">
-      {/* {weather.error && <h1>City not found</h1>} */}
+      {weather.error && <h1>City not found</h1>}
       <h1>{weather.city}</h1>
       <form onSubmit={handleSubmit}>
         <input
