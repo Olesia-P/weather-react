@@ -16,6 +16,9 @@ export default function ForecastSection({ city }) {
     const key = "f34eafbe5b20fo4443a0a3et0b481f5f";
     const url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
     axios.get(url).then(handleForecast);
+    axios.get(url).catch(function (error) {
+      <h1>{error.message}</h1>;
+    });
   }
 
   useEffect(() => {
@@ -35,6 +38,6 @@ export default function ForecastSection({ city }) {
       </section>
     );
   } else {
-    <div>Loading...</div>;
+    return <div>Loading...</div>;
   }
 }
