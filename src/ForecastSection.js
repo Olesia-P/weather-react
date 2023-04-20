@@ -15,10 +15,9 @@ export default function ForecastSection({ city, weather }) {
   }
 
   function searchForecast() {
-    const key = "f34eafbe5b20fo4443a0a3et0b481f5f";
+    const key = "34eafbe5b20fo4443a0a3et0b481f5f";
     const url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
-    axios.get(url).then(handleForecast);
-    axios.get(url).catch(handleError);
+    axios.get(url).then(handleForecast).catch(handleError);
   }
 
   function handleError(error) {
@@ -44,8 +43,7 @@ export default function ForecastSection({ city, weather }) {
         <Forecast forecastData={forecastData} day={6} />
       </section>
     );
-  } else if (errorStatus) {
-    return <h1>{error}</h1>;
+  } else if (errorStatus && <h1>{error}</h1>) {
   } else {
     return <div>Loading...</div>;
   }
