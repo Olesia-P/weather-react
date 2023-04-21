@@ -10,7 +10,8 @@ export default function WeatherSection({ weather }) {
     <section className="WeatherSection">
       <ul>
         <li className="temperature">
-          <Temperature temperature={temperature} />
+          {/* <Temperature temperature={temperature} /> */}
+          {Math.round(temperature)}°C
         </li>
         <li>{description}</li>
         <li>Humidity: {humidity}%</li>

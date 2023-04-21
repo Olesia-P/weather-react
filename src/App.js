@@ -11,7 +11,6 @@ function App() {
   const [weather, setWeather] = useState("");
 
   function showWeather(response) {
-    console.log(response);
     if (response.data.status === "not_found") {
       setWeather((state) => ({ ...state, error: "error_text" }));
     } else {
