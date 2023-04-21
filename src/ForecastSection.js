@@ -14,12 +14,6 @@ export default function ForecastSection({ city, weather }) {
     setLoaded(true);
   }
 
-  function searchForecast() {
-    const key = "f34eafbe5b20fo4443a0a3et0b481f5f";
-    const url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
-    axios.get(url).then(handleForecast).catch(handleError);
-  }
-
   function handleError(error) {
     console.log(error);
     if (error) {
@@ -29,6 +23,11 @@ export default function ForecastSection({ city, weather }) {
   }
 
   useEffect(() => {
+    function searchForecast() {
+      const key = "f34eafbe5b20fo4443a0a3et0b481f5f";
+      const url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
+      axios.get(url).then(handleForecast).catch(handleError);
+    }
     searchForecast();
   }, [weather.city]);
 
