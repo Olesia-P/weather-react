@@ -22,8 +22,8 @@ export default function Forecast({ forecastData, day }) {
       <div>
         <Icons icon={icon} size={50} />
       </div>
-      <div className="maxTemp">{Math.round(maxTemp)}°</div>
-      <div>{Math.round(minTemp)}°</div>
+      <div className="maxTemp">{Math.round(maxTemp)}°С</div>
+      <div>{Math.round(minTemp)}°С</div>
     </div>
   );
 }
