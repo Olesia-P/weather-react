@@ -1,7 +1,7 @@
 import React from "react";
 import "./WeatherSection.css";
 import Icons from "./Icons.js";
-import Temperature from "./Temperature.js";
+// import Temperature from "./Temperature.js";
 
 export default function WeatherSection({ weather }) {
   const { temperature, humidity, description, wind, icon } = weather;

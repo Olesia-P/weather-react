@@ -15,7 +15,6 @@ export default function ForecastSection({ city, weather }) {
   }
 
   function handleError(error) {
-    console.log(error);
     if (error) {
       setErrorStatus(true);
       setError(error.message);
