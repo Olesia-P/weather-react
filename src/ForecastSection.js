@@ -22,13 +22,15 @@ export default function ForecastSection({ city, weather }) {
     }
   }
 
+  function searchForecast() {
+    const key = "f34eafbe5b20fo4443a0a3et0b481f5f";
+    const url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
+    axios.get(url).then(handleForecast).catch(handleError);
+  }
+
   useEffect(() => {
-    function searchForecast() {
-      const key = "f34eafbe5b20fo4443a0a3et0b481f5f";
-      const url = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${key}&units=metric`;
-      axios.get(url).then(handleForecast).catch(handleError);
-    }
     searchForecast();
+    // eslint-disable-next-line
   }, [weather.city]);
 
   if (loaded) {
