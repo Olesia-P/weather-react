@@ -1,35 +1,38 @@
 import React, { useState } from "react";
+import cx from "classnames";
 import "./Temperature.css";
 
-export default function Temperature({ temperature }) {
-  const [units, setUnits] = useState(Math.round(temperature));
-
-  if (units === Math.round(temperature)) {
-    return (
-      <span>
-        {units}
-        {"° "}
-        <span className="Temperature">
-          {" "}
-          <button className="clicked">C</button>/
-          <button
-            onClick={() => setUnits(Math.round((9 / 5) * temperature + 32))}
-          >
-            F
-          </button>
-        </span>
+export default function Temperature({
+  temperature,
+  units,
+  setUnits,
+  showTemp,
+}) {
+  console.log(temperature);
+  return (
+    <span>
+      {showTemp(units, temperature)}
+      {"° "}
+      <span className="Temperature">
+        {" "}
+        <button
+          className={cx(units === "C" && "clicked")}
+          onClick={() => {
+            setUnits("C");
+          }}
+        >
+          C
+        </button>
+        /
+        <button
+          className={cx(units === "F" && "clicked")}
+          onClick={() => {
+            setUnits("F");
+          }}
+        >
+          F
+        </button>
       </span>
-    );
-  } else {
-    return (
-      <span>
-        {units}
-        {"° "}
-        <span className="Temperature">
-          <button onClick={() => setUnits(Math.round(temperature))}>C</button>/
-          <button className="clicked">F</button>
-        </span>
-      </span>
-    );
-  }
+    </span>
+  );
 }

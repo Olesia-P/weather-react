@@ -3,7 +3,7 @@ import "./ForecastSection.css";
 import Forecast from "../Forecast/Forecast.js";
 import axios from "axios";
 
-export default function ForecastSection({ city, weather }) {
+export default function ForecastSection({ city, weather, units, showTemp }) {
   const [forecastData, setForecastData] = useState("");
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
@@ -35,12 +35,42 @@ export default function ForecastSection({ city, weather }) {
   if (loaded) {
     return (
       <section className="ForecastSection">
-        <Forecast forecastData={forecastData} day={1} />
-        <Forecast forecastData={forecastData} day={2} />
-        <Forecast forecastData={forecastData} day={3} />
-        <Forecast forecastData={forecastData} day={4} />
-        <Forecast forecastData={forecastData} day={5} />
-        <Forecast forecastData={forecastData} day={6} />
+        <Forecast
+          forecastData={forecastData}
+          showTemp={showTemp}
+          day={1}
+          units={units}
+        />
+        <Forecast
+          forecastData={forecastData}
+          showTemp={showTemp}
+          day={2}
+          units={units}
+        />
+        <Forecast
+          forecastData={forecastData}
+          showTemp={showTemp}
+          day={3}
+          units={units}
+        />
+        <Forecast
+          forecastData={forecastData}
+          showTemp={showTemp}
+          day={4}
+          units={units}
+        />
+        <Forecast
+          forecastData={forecastData}
+          showTemp={showTemp}
+          day={5}
+          units={units}
+        />
+        <Forecast
+          forecastData={forecastData}
+          showTemp={showTemp}
+          day={6}
+          units={units}
+        />
       </section>
     );
   } else if (errorStatus) {

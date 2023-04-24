@@ -3,14 +3,19 @@ import "./WeatherSection.css";
 import Icons from "../Icons/Icons.js";
 import Temperature from "../Temperature/Temperature.js";
 
-export default function WeatherSection({ weather }) {
+export default function WeatherSection({ weather, units, setUnits, showTemp }) {
   const { temperature, humidity, description, wind, icon } = weather;
 
   return (
     <section className="WeatherSection">
       <ul>
         <li className="temperature">
-          <Temperature temperature={temperature} />
+          <Temperature
+            temperature={temperature}
+            units={units}
+            setUnits={setUnits}
+            showTemp={showTemp}
+          />
           {/* {Math.round(temperature)}°C */}
         </li>
         <li>{description}</li>

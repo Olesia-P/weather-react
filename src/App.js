@@ -9,6 +9,16 @@ function App() {
   const [loaded, setLoaded] = useState(false);
   const [city, setCity] = useState("Kyiv");
   const [weather, setWeather] = useState("");
+  const [units, setUnits] = useState("C");
+
+  function showTemp(units, temp) {
+    if (units === "C") {
+      return Math.round(temp);
+    }
+    if (units === "F") {
+      return Math.round((9 / 5) * temp + 32);
+    }
+  }
 
   function showWeather(response) {
     if (response.data.status === "not_found") {
@@ -53,8 +63,18 @@ function App() {
             handleSubmit={handleSubmit}
             weather={weather}
           />
-          <WeatherSection weather={weather} />
-          <ForecastSection city={city} weather={weather} />
+          <WeatherSection
+            weather={weather}
+            units={units}
+            setUnits={setUnits}
+            showTemp={showTemp}
+          />
+          <ForecastSection
+            city={city}
+            weather={weather}
+            units={units}
+            showTemp={showTemp}
+          />
           <footer>
             <a href="https://github.com/Olesia-P/weather-react">
               Open-source code{" "}

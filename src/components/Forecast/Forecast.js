@@ -2,7 +2,7 @@ import React from "react";
 import "./Forecast.css";
 import Icons from "../Icons/Icons.js";
 
-export default function Forecast({ forecastData, day }) {
+export default function Forecast({ forecastData, day, showTemp, units }) {
   let singleForecast = {
     minTemp: forecastData.data.daily[day].temperature.minimum,
     maxTemp: forecastData.data.daily[day].temperature.maximum,
@@ -22,8 +22,13 @@ export default function Forecast({ forecastData, day }) {
       <div>
         <Icons icon={icon} size={50} />
       </div>
-      <div className="maxTemp">{Math.round(maxTemp)}°С</div>
-      <div>{Math.round(minTemp)}°С</div>
+      <div className="maxTemp">
+        {showTemp(units, Math.round(maxTemp))}°{units}
+      </div>
+      <div>
+        {" "}
+        {showTemp(units, Math.round(minTemp))}°{units}
+      </div>
     </div>
   );
 }
