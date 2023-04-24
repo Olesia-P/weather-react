@@ -1,6 +1,6 @@
 import React from "react";
 import "./Forecast.css";
-import Icons from "./Icons.js";
+import Icons from "../Icons/Icons.js";
 
 export default function Forecast({ forecastData, day }) {
   let singleForecast = {

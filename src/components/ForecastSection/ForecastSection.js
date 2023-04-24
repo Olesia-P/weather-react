@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ForecastSection.css";
-import Forecast from "./Forecast.js";
+import Forecast from "../Forecast/Forecast.js";
 import axios from "axios";
 
 export default function ForecastSection({ city, weather }) {

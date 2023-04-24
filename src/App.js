@@ -1,7 +1,7 @@
 import "./App.css";
-import CitySection from "./CitySection.js";
-import WeatherSection from "./WeatherSection.js";
-import ForecastSection from "./ForecastSection.js";
+import CitySection from "./components/CitySection/CitySection.js";
+import WeatherSection from "./components//WeatherSection/WeatherSection.js";
+import ForecastSection from "./components//ForecastSection/ForecastSection.js";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
