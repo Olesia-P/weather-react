@@ -8,6 +8,14 @@ export default function ForecastSection({ city, weather, units, showTemp }) {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState("");
   const [errorStatus, setErrorStatus] = useState(false);
+  const days = [
+    { day: "1" },
+    { day: "2" },
+    { day: "3" },
+    { day: "4" },
+    { day: "5" },
+    { day: "6" },
+  ];
 
   function handleForecast(response) {
     setForecastData(response);
@@ -35,42 +43,15 @@ export default function ForecastSection({ city, weather, units, showTemp }) {
   if (loaded) {
     return (
       <section className="ForecastSection">
-        <Forecast
-          forecastData={forecastData}
-          showTemp={showTemp}
-          day={1}
-          units={units}
-        />
-        <Forecast
-          forecastData={forecastData}
-          showTemp={showTemp}
-          day={2}
-          units={units}
-        />
-        <Forecast
-          forecastData={forecastData}
-          showTemp={showTemp}
-          day={3}
-          units={units}
-        />
-        <Forecast
-          forecastData={forecastData}
-          showTemp={showTemp}
-          day={4}
-          units={units}
-        />
-        <Forecast
-          forecastData={forecastData}
-          showTemp={showTemp}
-          day={5}
-          units={units}
-        />
-        <Forecast
-          forecastData={forecastData}
-          showTemp={showTemp}
-          day={6}
-          units={units}
-        />
+        {days.map((it) => (
+          <Forecast
+            key={it}
+            forecastData={forecastData}
+            showTemp={showTemp}
+            day={days.day}
+            units={units}
+          />
+        ))}
       </section>
     );
   } else if (errorStatus) {

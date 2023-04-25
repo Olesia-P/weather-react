@@ -1,11 +1,8 @@
 import React from "react";
 import "./CitySection.css";
+import Input from "../Input/Input.js";
 
 export default function CitySection({ setCity, city, handleSubmit, weather }) {
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
   const weekDays = [
     "Sunday",
     "Monday",
@@ -32,13 +29,14 @@ export default function CitySection({ setCity, city, handleSubmit, weather }) {
       {!weather.error && <h1>{weather.city}</h1>}
 
       <form onSubmit={handleSubmit}>
-        <input
+        <Input city={city} setCity={setCity} />
+        {/* <input
           type="text"
           placeholder="Type a city..."
           autoComplete="off"
           onChange={updateCity}
           value={city}
-        />
+        /> */}
         <button type="submit">Search</button>
       </form>
       <p>
