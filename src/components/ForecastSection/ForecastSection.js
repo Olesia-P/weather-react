@@ -45,10 +45,10 @@ export default function ForecastSection({ city, weather, units, showTemp }) {
       <section className="ForecastSection">
         {days.map((it) => (
           <Forecast
-            key={it}
+            key={it.day}
             forecastData={forecastData}
             showTemp={showTemp}
-            day={days.day}
+            day={it.day}
             units={units}
           />
         ))}
