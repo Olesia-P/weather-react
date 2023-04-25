@@ -16,7 +16,6 @@ export default function WeatherSection({ weather, units, setUnits, showTemp }) {
             setUnits={setUnits}
             showTemp={showTemp}
           />
-          {/* {Math.round(temperature)}°C */}
         </li>
         <li>{description}</li>
         <li>Humidity: {humidity}%</li>
