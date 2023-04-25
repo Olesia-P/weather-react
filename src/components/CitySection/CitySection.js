@@ -28,17 +28,15 @@ export default function CitySection({ setCity, city, handleSubmit, weather }) {
       {weather.error && <h1>City not found</h1>}
       {!weather.error && <h1>{weather.city}</h1>}
 
-      <form onSubmit={handleSubmit}>
-        <Input city={city} setCity={setCity} />
-        {/* <input
+      <Input city={city} setCity={setCity} onSubmit={handleSubmit} />
+      {/* <input
           type="text"
           placeholder="Type a city..."
           autoComplete="off"
           onChange={updateCity}
           value={city}
         /> */}
-        <button type="submit">Search</button>
-      </form>
+
       <p>
         Last updated: {day} {hours}:{minutes}
       </p>
