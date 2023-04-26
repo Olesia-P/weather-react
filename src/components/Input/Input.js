@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Input(city, setCity, handleSubmit) {
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
+export default function Input(value, onChange) {
+  const [inputValue, setInputValue] = useState("value");
+
+  useEffect(() => {
+    if (inputValue !== value) onChange(value);
+  }, [value]);
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Type a city..."
-        autoComplete="off"
-        onChange={updateCity}
-        value={city}
-      />
-      <button type="submit">Search</button>
-    </form>
+    <input
+      type="text"
+      placeholder="Type a city..."
+      autoComplete="off"
+      onChange={(event) => setInputValue(event.target.value)}
+      value={inputValue}
+    />
   );
 }
