@@ -1,5 +1,5 @@
 import React from "react";
-import "./CitySection.css";
+import css from "./CitySection.module.css";
 import Input from "../Input/Input.js";
 
 export default function CitySection({ setCity, city, handleSubmit, weather }) {
@@ -24,7 +24,7 @@ export default function CitySection({ setCity, city, handleSubmit, weather }) {
   }
 
   return (
-    <section className="CitySection">
+    <section className={css.CitySection}>
       {weather.error && <h1>City not found</h1>}
       {!weather.error && <h1>{weather.city}</h1>}
       <form onSubmit={handleSubmit}>

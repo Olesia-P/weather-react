@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ForecastSection.css";
+import css from "./ForecastSection.module.css";
 import Forecast from "../Forecast/Forecast.js";
 import axios from "axios";
 
@@ -42,7 +42,7 @@ export default function ForecastSection({ city, weather, units, showTemp }) {
 
   if (loaded) {
     return (
-      <section className="ForecastSection">
+      <section className={css.ForecastSection}>
         {days.map((it) => (
           <Forecast
             key={it.day}

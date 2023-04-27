@@ -1,5 +1,5 @@
 import React from "react";
-import "./WeatherSection.css";
+import css from "./WeatherSection.module.css";
 import Icons from "../Icons/Icons.js";
 import Temperature from "../Temperature/Temperature.js";
 
@@ -7,7 +7,7 @@ export default function WeatherSection({ weather, units, setUnits, showTemp }) {
   const { temperature, humidity, description, wind, icon } = weather;
 
   return (
-    <section className="WeatherSection">
+    <section className={css.WeatherSection}>
       <ul>
         <li className="temperature">
           <Temperature

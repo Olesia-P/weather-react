@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import "./Temperature.css";
+import css from "./Temperature.module.css";
 
 export default function Temperature({
   temperature,
@@ -8,12 +8,11 @@ export default function Temperature({
   setUnits,
   showTemp,
 }) {
-  console.log(temperature);
   return (
     <span>
       {showTemp(units, temperature)}
       {"° "}
-      <span className="Temperature">
+      <span className={css.Temperature}>
         {" "}
         <button
           className={cx(units === "C" && "clicked")}

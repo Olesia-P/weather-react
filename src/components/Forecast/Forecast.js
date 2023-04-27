@@ -1,5 +1,5 @@
 import React from "react";
-import "./Forecast.css";
+import css from "./Forecast.module.css";
 import Icons from "../Icons/Icons.js";
 
 export default function Forecast({ forecastData, day, showTemp, units }) {
@@ -17,7 +17,7 @@ export default function Forecast({ forecastData, day, showTemp, units }) {
   const specificDay = weekDays[date.getDay()];
 
   return (
-    <div className="Forecast">
+    <div className={css.Forecast}>
       <div>{specificDay}</div>
       <div>
         <Icons icon={icon} size={50} />
