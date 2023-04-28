@@ -1,8 +1,10 @@
+@import "../variables";
+
 .ForecastSection {
-  background: var(--accent-color);
+  background: $accent-color;
   text-align: center;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  font-size: var(--bigger-font-size);
+  font-size: $bigger-font-size;
 }

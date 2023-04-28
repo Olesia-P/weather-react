@@ -1,0 +1,32 @@
+@import "components/variables";
+.App {
+  background: #fcfefe;
+  font-family: "Courier New", monospace;
+  font-weight: 700;
+  line-height: 1.5rem;
+
+  main {
+    margin: 1rem auto;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    font-size: $main-font-size;
+
+    section {
+      border: 0.6rem outset transparent;
+      border-radius: 30px;
+      box-shadow: $main-shadow;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .App main {
+    max-width: 80%;
+  }
+}

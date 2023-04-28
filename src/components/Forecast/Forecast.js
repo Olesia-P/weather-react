@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./Forecast.module.css";
+import css from "./Forecast.module.scss";
 import Icons from "../Icons/Icons.js";
 
 export default function Forecast({ forecastData, day, showTemp, units }) {
@@ -22,7 +22,7 @@ export default function Forecast({ forecastData, day, showTemp, units }) {
       <div>
         <Icons icon={icon} size={50} />
       </div>
-      <div className="maxTemp">
+      <div className={css.maxTemp}>
         {showTemp(units, Math.round(maxTemp))}°{units}
       </div>
       <div>

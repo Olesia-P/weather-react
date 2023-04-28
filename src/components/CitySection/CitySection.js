@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./CitySection.module.css";
+import css from "./CitySection.module.scss";
 import Input from "../Input/Input.js";
 
 export default function CitySection({ city, handleSubmit, weather, setCity }) {

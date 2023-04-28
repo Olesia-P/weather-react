@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import css from "./ForecastSection.module.css";
+import css from "./ForecastSection.module.scss";
 import Forecast from "../Forecast/Forecast.js";
 import axios from "axios";
 

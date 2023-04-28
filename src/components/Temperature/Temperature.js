@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import css from "./Temperature.module.css";
+import css from "./Temperature.module.scss";
 
 export default function Temperature({
   temperature,
@@ -15,7 +15,7 @@ export default function Temperature({
       <span className={css.Temperature}>
         {" "}
         <button
-          className={cx(units === "C" && "clicked")}
+          className={cx(units === "C" && css.clicked)}
           onClick={() => {
             setUnits("C");
           }}
@@ -24,7 +24,7 @@ export default function Temperature({
         </button>
         /
         <button
-          className={cx(units === "F" && "clicked")}
+          className={cx(units === "F" && css.clicked)}
           onClick={() => {
             setUnits("F");
           }}

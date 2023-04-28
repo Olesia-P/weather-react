@@ -1,4 +1,4 @@
-import css from "./App.module.css";
+import css from "./App.module.scss";
 import CitySection from "./components/CitySection/CitySection.js";
 import WeatherSection from "./components//WeatherSection/WeatherSection.js";
 import ForecastSection from "./components//ForecastSection/ForecastSection.js";
