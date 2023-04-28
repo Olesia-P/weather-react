@@ -11,6 +11,8 @@ function App() {
   const [weather, setWeather] = useState("");
   const [units, setUnits] = useState("C");
 
+  const fontSize = "L";
+
   function showTemp(units, temp) {
     if (units === "C") {
       return Math.round(temp);
@@ -62,6 +64,7 @@ function App() {
             setCity={setCity}
             handleSubmit={handleSubmit}
             weather={weather}
+            fontSize={fontSize}
           />
           <WeatherSection
             weather={weather}

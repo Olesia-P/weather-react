@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import css from "./Input.module.scss";
+import cx from "classnames";
 
-export default function Input({ value, onChange }) {
+export default function Input({ value, onChange, fontSize }) {
   const [inputValue, setInputValue] = useState(value || "");
 
   function handleChange(handledValue) {
@@ -11,6 +13,7 @@ export default function Input({ value, onChange }) {
     if (inputValue !== value) {
       handleChange(value);
     }
+    // eslint-disable-next-line
   }, [value, handleChange, inputValue]);
 
   return (
@@ -20,6 +23,12 @@ export default function Input({ value, onChange }) {
       autoComplete="off"
       onChange={(event) => handleChange(event.target.value)}
       value={inputValue}
+      className={cx(
+        css.Input,
+        fontSize === "S" && css.sizeS,
+        fontSize === "M" && css.sizeM,
+        fontSize === "L" && css.sizeL
+      )}
     />
   );
 }

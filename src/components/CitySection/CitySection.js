@@ -2,7 +2,13 @@ import React from "react";
 import css from "./CitySection.module.scss";
 import Input from "../Input/Input.js";
 
-export default function CitySection({ city, handleSubmit, weather, setCity }) {
+export default function CitySection({
+  city,
+  handleSubmit,
+  weather,
+  setCity,
+  fontSize,
+}) {
   const weekDays = [
     "Sunday",
     "Monday",
@@ -28,7 +34,7 @@ export default function CitySection({ city, handleSubmit, weather, setCity }) {
       {weather.error && <h1>City not found</h1>}
       {!weather.error && <h1>{weather.city}</h1>}
       <form onSubmit={handleSubmit}>
-        <Input value={city} onChange={setCity} />
+        <Input value={city} onChange={setCity} fontSize={fontSize} />
 
         <button type="submit">Search</button>
       </form>
