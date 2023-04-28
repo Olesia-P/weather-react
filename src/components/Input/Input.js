@@ -11,7 +11,7 @@ export default function Input({ value, onChange }) {
     if (inputValue !== value) {
       handleChange(value);
     }
-  }, [value]);
+  }, [value, handleChange, inputValue]);
 
   return (
     <input
