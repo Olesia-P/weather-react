@@ -43,6 +43,10 @@ function App() {
     axios.get(url).then(showWeather);
   }
 
+  function onChangeCity(handledValue) {
+    setCity(handledValue);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -62,6 +66,7 @@ function App() {
             setCity={setCity}
             handleSubmit={handleSubmit}
             weather={weather}
+            onChangeCity={onChangeCity}
           />
           <WeatherSection
             weather={weather}

@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-export default function Input(value, onChange) {
-  const [inputValue, setInputValue] = useState("value");
+export default function Input({ value, onChange }) {
+  const [inputValue, setInputValue] = useState(value || "");
 
+  function handleChange(handledValue) {
+    setInputValue(handledValue);
+    onChange(handledValue);
+  }
   useEffect(() => {
-    if (inputValue !== value) onChange(value);
+    if (inputValue !== value) {
+      handleChange(value);
+    }
   }, [value]);
 
   return (
@@ -12,7 +18,7 @@ export default function Input(value, onChange) {
       type="text"
       placeholder="Type a city..."
       autoComplete="off"
-      onChange={(event) => setInputValue(event.target.value)}
+      onChange={(event) => handleChange(event.target.value)}
       value={inputValue}
     />
   );
