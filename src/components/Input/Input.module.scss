@@ -1,12 +1,13 @@
-.Input input[type="text"] {
-  .sizeL {
-    font-size: 120pt;
+.Input {
+  &.sizeL {
+    font-size: 24pt;
   }
-  .sizeM {
+
+  &.sizeM {
     font-size: 18pt;
   }
 
-  .sizeS {
+  &.sizeS {
     font-size: 14pt;
   }
 }
