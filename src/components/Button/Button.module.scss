@@ -1,0 +1,39 @@
+@import "../variables.scss";
+
+// @media (max-width: 500px) {
+//   .Button {
+//     margin: 0.5rem 0.5rem 0 0.5rem;
+//   }
+// }
+
+.Button {
+  margin: 0 0.5rem;
+  border-radius: 0.4em;
+  padding: 0.1rem 1.5rem;
+  font-size: $main-font-size;
+  //   font-weight: bold;
+  width: 3rem;
+
+  &.warm {
+    background: $accent-color;
+    border: 0.4rem outset $accent-color;
+    color: #000000;
+  }
+
+  &.cold {
+    background: $green-color;
+    border: 0.4rem outset $green-color;
+    color: #000000;
+  }
+  &:hover {
+    filter: brightness(115%);
+  }
+
+  &.warm:active {
+    border: 0.2rem inset $accent-color;
+  }
+
+  &.cold:active {
+    border: 0.2rem inset $green-color;
+  }
+}

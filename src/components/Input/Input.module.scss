@@ -1,3 +1,4 @@
+@import "../variables";
 .Input {
   &.L {
     input {
@@ -15,5 +16,13 @@
     input {
       font-size: 14pt;
     }
+  }
+
+  input {
+    outline: none;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.4em;
+    box-shadow: $main-shadow;
   }
 }

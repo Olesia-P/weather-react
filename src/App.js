@@ -62,7 +62,6 @@ function App() {
             setCity={setCity}
             handleSubmit={handleSubmit}
             weather={weather}
-            fontSize="S"
           />
           <WeatherSection
             weather={weather}
