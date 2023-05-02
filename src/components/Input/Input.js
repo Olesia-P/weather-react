@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import css from "./Input.module.scss";
 import cx from "classnames";
 
-export default function Input({ value, onChange, fontSize }) {
+export default function Input({ value, onChange, fontSize = "L" }) {
   const [inputValue, setInputValue] = useState(value || "");
 
   function handleChange(handledValue) {
@@ -17,18 +17,14 @@ export default function Input({ value, onChange, fontSize }) {
   }, [value, handleChange, inputValue]);
 
   return (
-    <input
-      type="text"
-      placeholder="Type a city..."
-      autoComplete="off"
-      onChange={(event) => handleChange(event.target.value)}
-      value={inputValue}
-      className={cx(
-        css.Input,
-        fontSize === "S" && css.sizeS,
-        fontSize === "M" && css.sizeM,
-        fontSize === "L" && css.sizeL
-      )}
-    />
+    <div className={cx(css.Input, css[fontSize])}>
+      <input
+        type="text"
+        placeholder="Type a city..."
+        autoComplete="off"
+        onChange={(event) => handleChange(event.target.value)}
+        value={inputValue}
+      />
+    </div>
   );
 }

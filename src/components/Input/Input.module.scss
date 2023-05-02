@@ -1,13 +1,19 @@
 .Input {
-  &.sizeL {
-    font-size: 24pt;
+  &.L {
+    input {
+      font-size: 24pt;
+    }
   }
 
-  &.sizeM {
-    font-size: 18pt;
+  &.M {
+    input {
+      font-size: 18pt;
+    }
   }
 
-  &.sizeS {
-    font-size: 14pt;
+  &.S {
+    input {
+      font-size: 14pt;
+    }
   }
 }
