@@ -1,20 +1,14 @@
 @import "../variables.scss";
 
-// @media (max-width: 500px) {
-//   .Button {
-//     margin: 0.5rem 0.5rem 0 0.5rem;
-//   }
-// }
-
 .Button {
-  margin: 0 0.5rem;
   border-radius: 0.4em;
   padding: 0.1rem 1.5rem;
   font-size: $main-font-size;
-  //   font-weight: bold;
+  font-weight: 900;
   width: 3rem;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 
   &.warm {
     background: $accent-color;
@@ -37,5 +31,11 @@
 
   &.cold:active {
     border: 0.4rem inset $green-color;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: brightness(80%);
   }
 }

@@ -30,13 +30,22 @@ export default function CitySection({ city, handleSubmit, weather, setCity }) {
       {!weather.error && <h1>{weather.city}</h1>}
 
       <div className={css.inputContainer}>
-        <Input
-          value={city}
-          onChange={setCity}
-          fontSize="S"
-          placeholder="Type a city"
-        />
-        <Button handleSubmit={handleSubmit} theme="cold" />
+        <div className={css.button}>
+          <Input
+            value={city}
+            onChange={setCity}
+            fontSize="S"
+            placeholder="Type a city"
+          />
+        </div>
+        <div className={css.input}>
+          <Button
+            handleSubmit={handleSubmit}
+            theme="cold"
+            buttonText="Search"
+            value={city}
+          />
+        </div>
       </div>
       <p>
         Last updated: {day} {hours}:{minutes}
