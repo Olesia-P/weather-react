@@ -10,12 +10,11 @@ export default function Input({
 }) {
   const [inputValue, setInputValue] = useState(value || "");
 
-  function handleChange(handledValue) {
-    useCallback(() => {
-      setInputValue(handledValue);
-      onChange(handledValue);
-    });
-  }
+  const handleChange = useCallback((handledValue) => {
+    setInputValue(handledValue);
+    onChange(handledValue);
+  });
+
   useEffect(() => {
     if (inputValue !== value) {
       handleChange(value);

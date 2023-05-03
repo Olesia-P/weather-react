@@ -13,6 +13,8 @@
   font-size: $main-font-size;
   //   font-weight: bold;
   width: 3rem;
+  display: flex;
+  justify-content: center;
 
   &.warm {
     background: $accent-color;
@@ -30,10 +32,10 @@
   }
 
   &.warm:active {
-    border: 0.2rem inset $accent-color;
+    border: 0.4rem inset $accent-color;
   }
 
   &.cold:active {
-    border: 0.2rem inset $green-color;
+    border: 0.4rem inset $green-color;
   }
 }
