@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import css from "./Input.module.scss";
 import cx from "classnames";
 
@@ -11,15 +11,16 @@ export default function Input({
   const [inputValue, setInputValue] = useState(value || "");
 
   function handleChange(handledValue) {
-    setInputValue(handledValue);
-    onChange(handledValue);
+    useCallback(() => {
+      setInputValue(handledValue);
+      onChange(handledValue);
+    });
   }
   useEffect(() => {
     if (inputValue !== value) {
       handleChange(value);
     }
-    // eslint-disable-next-line
-  }, [value, handleChange, inputValue]);
+  }, [value, inputValue]);
 
   return (
     <div className={cx(css.Input, css[fontSize])}>
