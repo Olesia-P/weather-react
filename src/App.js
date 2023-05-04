@@ -2,6 +2,7 @@ import css from "./App.module.scss";
 import CitySection from "./components/CitySection/CitySection.js";
 import WeatherSection from "./components//WeatherSection/WeatherSection.js";
 import ForecastSection from "./components//ForecastSection/ForecastSection.js";
+import PopUp from "./components/PopUp/PopUp.js";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -10,6 +11,7 @@ function App() {
   const [city, setCity] = useState("Kyiv");
   const [weather, setWeather] = useState("");
   const [units, setUnits] = useState("C");
+  const [popUp, setPopUp] = useState(false);
 
   function showTemp(units, temp) {
     if (units === "C") {
@@ -23,6 +25,7 @@ function App() {
   function showWeather(response) {
     if (response.data.status === "not_found") {
       setWeather((state) => ({ ...state, error: "error_text" }));
+      setPopUp(true);
     } else {
       setWeather({
         city: response.data.city,
@@ -56,6 +59,7 @@ function App() {
   if (loaded) {
     return (
       <div className={css.App}>
+        {popUp === true && <PopUp setPopUp={setPopUp} setCity={setCity} />}
         <main>
           <CitySection
             city={city}
