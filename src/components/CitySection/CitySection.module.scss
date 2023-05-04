@@ -18,18 +18,14 @@
     .button {
       margin: 0 0.5rem;
     }
-
-    .input {
+    @media (max-width: 600px) {
+      .button {
+        margin: 0.5rem;
+      }
     }
   }
 
   p {
     margin: 0.5rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .button {
-    margin: 0.5rem 0;
   }
 }

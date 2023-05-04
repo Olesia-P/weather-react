@@ -10,16 +10,19 @@ export default function Input({
 }) {
   const [inputValue, setInputValue] = useState(value || "");
 
-  const handleChange = useCallback((handledValue) => {
-    setInputValue(handledValue);
-    onChange(handledValue);
-  });
+  const handleChange = useCallback(
+    (handledValue) => {
+      setInputValue(handledValue);
+      onChange(handledValue);
+    },
+    [onChange]
+  );
 
   useEffect(() => {
     if (inputValue !== value) {
       handleChange(value);
     }
-  }, [value, inputValue]);
+  }, [value, inputValue, handleChange]);
 
   return (
     <div className={cx(css.Input, css[fontSize])}>
