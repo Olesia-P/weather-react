@@ -19,14 +19,16 @@
       margin: 0 0.5rem;
     }
 
-    @media (max-width: 541px) {
-      .button {
-        margin: 0.5rem;
-      }
-    }
+
   }
 
   p {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 541px) {
+  .CitySection .inputContainer .button {
     margin: 0.5rem;
   }
 }

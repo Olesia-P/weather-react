@@ -1,36 +1,56 @@
 @import "../variables.scss";
 
 .Button {
-  border-radius: 0.4em;
-  padding: 0.1rem 1.5rem;
-  font-size: $main-font-size;
-  font-weight: 900;
-  width: 3rem;
   display: flex;
   justify-content: center;
   cursor: pointer;
 
+  &.big {
+    border-radius: 0.4em;
+    padding: 0.1rem 1.5rem;
+    font-size: $main-font-size;
+    width: 3rem;
+  }
+
+  &.small {
+    font-size: smaller;
+    padding: 0 0.2rem;
+    display: inline;
+    border-radius: 0.2em;
+    border: 0.2rem outset $accent-color;
+  }
+
   &.warm {
     background: $accent-color;
-    border: 0.4rem outset $accent-color;
+    border: 0.2rem outset $accent-color;
     color: #000000;
+
+    &.clicked {
+      border: 0.2rem inset $accent-color;
+    }
   }
 
   &.cold {
     background: $green-color;
-    border: 0.4rem outset $green-color;
+    border: 0.2rem outset $green-color;
     color: #000000;
+
+    &.clicked {
+      border: 0.2rem inset $green-color;
+    }
   }
+
+
   &:hover {
     filter: brightness(115%);
   }
 
   &.warm:active {
-    border: 0.4rem inset $accent-color;
+    border: 0.2rem inset $accent-color;
   }
 
   &.cold:active {
-    border: 0.4rem inset $green-color;
+    border: 0.2rem inset $green-color;
   }
 
   &.disabled {
@@ -38,4 +58,9 @@
     pointer-events: none;
     filter: brightness(80%);
   }
+
+  // &.clicked {
+  //   border: 0.2rem inset $accent-color;
+  // }
+
 }

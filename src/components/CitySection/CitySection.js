@@ -42,6 +42,8 @@ export default function CitySection({ city, handleSubmit, weather, setCity }) {
             theme="warm"
             buttonText="Search"
             value={city}
+            size="big"
+            clicked={false}
           />
         </div>
       </div>

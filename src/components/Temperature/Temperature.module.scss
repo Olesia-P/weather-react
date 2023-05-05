@@ -6,13 +6,5 @@
   top: -0.5rem;
   left: -0.8rem;
 
-  button {
-    background-color: $accent-color;
-    border: 0.2rem outset $accent-color;
-    border-radius: 0.4em;
-  }
 
-  .clicked {
-    border: 0.2rem inset $accent-color;
-  }
 }

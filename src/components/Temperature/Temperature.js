@@ -1,6 +1,7 @@
 import React from "react";
-import cx from "classnames";
+// import cx from "classnames";
 import css from "./Temperature.module.scss";
+import Button from "../Button/Button.js";
 
 export default function Temperature({
   temperature,
@@ -14,23 +15,27 @@ export default function Temperature({
       {"° "}
       <span className={css.Temperature}>
         {" "}
-        <button
-          className={cx(units === "C" && css.clicked)}
-          onClick={() => {
+        <Button
+          handleSubmit={() => {
             setUnits("C");
           }}
-        >
-          C
-        </button>
+          theme="warm"
+          buttonText="C"
+          value="yes"
+          size="small"
+          clicked={units === "C"}
+        />
         /
-        <button
-          className={cx(units === "F" && css.clicked)}
-          onClick={() => {
+        <Button
+          handleSubmit={() => {
             setUnits("F");
           }}
-        >
-          F
-        </button>
+          theme="warm"
+          buttonText="F"
+          value="yes"
+          size="small"
+          clicked={units === "F"}
+        />
       </span>
     </span>
   );
