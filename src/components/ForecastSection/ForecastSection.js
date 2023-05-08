@@ -3,11 +3,16 @@ import css from "./ForecastSection.module.scss";
 import Forecast from "../Forecast/Forecast.js";
 import axios from "axios";
 
-export default function ForecastSection({ city, weather, units, showTemp }) {
+export default function ForecastSection({
+  city,
+  weather,
+  units,
+  showTemp,
+  handleError,
+}) {
   const [forecastData, setForecastData] = useState("");
   const [loaded, setLoaded] = useState(false);
-  const [error, setError] = useState("");
-  const [errorStatus, setErrorStatus] = useState(false);
+
   const days = [
     { day: "1" },
     { day: "2" },
@@ -20,13 +25,6 @@ export default function ForecastSection({ city, weather, units, showTemp }) {
   function handleForecast(response) {
     setForecastData(response);
     setLoaded(true);
-  }
-
-  function handleError(error) {
-    if (error) {
-      setErrorStatus(true);
-      setError(error.message);
-    }
   }
 
   function searchForecast() {
@@ -54,8 +52,6 @@ export default function ForecastSection({ city, weather, units, showTemp }) {
         ))}
       </section>
     );
-  } else if (errorStatus) {
-    return <h1>{error}</h1>;
   } else {
     return <div>Loading...</div>;
   }
