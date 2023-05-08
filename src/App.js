@@ -11,15 +11,11 @@ function App() {
   const [city, setCity] = useState("Kyiv");
   const [weather, setWeather] = useState("");
   const [units, setUnits] = useState("C");
-  const [popUp, setPopUp] = useState(false);
   const [globalErrorText, setGlobalErrorText] = useState("");
-  const [errorTrigger, setErrorTrigger] = useState("");
 
   function handleError(error) {
     if (error) {
-      setErrorTrigger("common_error");
       setGlobalErrorText(error.message);
-      setPopUp(true);
     }
   }
 
@@ -35,8 +31,6 @@ function App() {
   function showWeather(response) {
     if (response.data.status === "not_found") {
       setWeather((state) => ({ ...state, error: "error_text" }));
-      setErrorTrigger("city_not_found");
-      setPopUp(true);
       setGlobalErrorText(
         "City is not found. Please try again. Watch out for spelling mistakes."
       );
@@ -73,20 +67,13 @@ function App() {
   if (loaded) {
     return (
       <div className={css.App}>
-        {errorTrigger === "city_not_found" && popUp && (
+        {globalErrorText !== "" && (
           <PopUp
-            setPopUp={setPopUp}
-            onClose={setCity}
+            setGlobalErrorText={setGlobalErrorText}
             globalErrorText={globalErrorText}
           />
         )}
-        {errorTrigger === "common_error" && popUp && (
-          <PopUp
-            setPopUp={setPopUp}
-            onClose={setGlobalErrorText}
-            globalErrorText={globalErrorText}
-          />
-        )}
+
         <main>
           <CitySection
             city={city}
