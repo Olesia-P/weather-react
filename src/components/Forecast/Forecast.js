@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./Forecast.module.scss";
-import Icons from "../Icons/Icons.js";
+// import Icons from "../Icons/Icons.js";
+import MyIcons from "../MyIcons/MyIcons.js";
 
 export default function Forecast({ forecastData, day, showTemp, units }) {
   let singleForecast = {
@@ -20,7 +21,8 @@ export default function Forecast({ forecastData, day, showTemp, units }) {
     <div className={css.Forecast}>
       <div>{specificDay}</div>
       <div>
-        <Icons icon={icon} size={50} />
+        {/* <Icons icon={icon} size={50} /> */}
+        <MyIcons icon={icon} size={50} />
       </div>
       <div className={css.maxTemp}>
         {showTemp(units, Math.round(maxTemp))}°{units}

@@ -1,6 +1,7 @@
 import React from "react";
 import css from "./WeatherSection.module.scss";
-import Icons from "../Icons/Icons.js";
+// import Icons from "../Icons/Icons.js";
+import MyIcons from "../MyIcons/MyIcons.js";
 import Temperature from "../Temperature/Temperature.js";
 
 export default function WeatherSection({ weather, units, setUnits, showTemp }) {
@@ -23,7 +24,10 @@ export default function WeatherSection({ weather, units, setUnits, showTemp }) {
         <li>Wind: {Math.round(wind)} km/h</li>
       </ul>
       <i>
-        <Icons icon={icon} size={140} />
+        {/* <Icons icon={icon} size={140} /> */}
+        <div style={{ margin: "2rem" }}>
+          <MyIcons icon={icon} />
+        </div>
       </i>
     </section>
   );
