@@ -3,8 +3,10 @@ import CitySection from "./components/CitySection/CitySection.js";
 import WeatherSection from "./components//WeatherSection/WeatherSection.js";
 import ForecastSection from "./components//ForecastSection/ForecastSection.js";
 import PopUp from "./components/PopUp/PopUp.js";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import axios from "axios";
+
+export const AppContext = createContext(null);
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -64,48 +66,52 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
-  if (loaded) {
-    return (
+  return (
+    <AppContext.Provider value=// showTemp, // units,
+    "kektest">
       <div className={css.App}>
-        {globalErrorText !== "" && (
-          <PopUp
-            setGlobalErrorText={setGlobalErrorText}
-            globalErrorText={globalErrorText}
-          />
-        )}
+        {loaded && (
+          <div>
+            {globalErrorText !== "" && (
+              <PopUp
+                setGlobalErrorText={setGlobalErrorText}
+                globalErrorText={globalErrorText}
+              />
+            )}
 
-        <main>
-          <CitySection
-            city={city}
-            setCity={setCity}
-            handleSubmit={handleSubmit}
-            weather={weather}
-          />
-          <WeatherSection
-            weather={weather}
-            units={units}
-            setUnits={setUnits}
-            showTemp={showTemp}
-          />
-          <ForecastSection
-            city={city}
-            weather={weather}
-            units={units}
-            showTemp={showTemp}
-            handleError={handleError}
-          />
-          <footer>
-            <a href="https://github.com/Olesia-P/weather-react">
-              Open-source code{" "}
-            </a>
-            by Olesia Pryhun
-          </footer>
-        </main>
+            <main>
+              <CitySection
+                city={city}
+                setCity={setCity}
+                handleSubmit={handleSubmit}
+                weather={weather}
+              />
+              <WeatherSection
+                weather={weather}
+                units={units}
+                setUnits={setUnits}
+                showTemp={showTemp}
+              />
+              <ForecastSection
+                city={city}
+                weather={weather}
+                units={units}
+                showTemp={showTemp}
+                handleError={handleError}
+              />
+              <footer>
+                <a href="https://github.com/Olesia-P/weather-react">
+                  Open-source code{" "}
+                </a>
+                by Olesia Pryhun
+              </footer>
+            </main>
+          </div>
+        )}
+        {loaded === false && <div>Loading</div>}
       </div>
-    );
-  } else {
-    return <div>Loading</div>;
-  }
+    </AppContext.Provider>
+  );
 }
 
 export default App;

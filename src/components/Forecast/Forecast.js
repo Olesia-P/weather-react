@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import css from "./Forecast.module.scss";
 import Icons from "../Icons/Icons.js";
+import AppContext from "../../App";
 // import MyIcons from "../MyIcons/MyIcons.js";
 
 export default function Forecast({ forecastData, day, showTemp, units }) {
+  const testline = useContext(AppContext);
+  console.log(testline);
   let singleForecast = {
     minTemp: forecastData.data.daily[day].temperature.minimum,
     maxTemp: forecastData.data.daily[day].temperature.maximum,

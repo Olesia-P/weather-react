@@ -2,12 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import css from "./Input.module.scss";
 import cx from "classnames";
 
-export default function Input({
-  value,
-  onChange,
-  fontSize = "L",
-  placeholder,
-}) {
+export default function Input({ value, onChange, fontSize, placeholder }) {
   const [inputValue, setInputValue] = useState(value || "");
 
   const handleChange = useCallback(
