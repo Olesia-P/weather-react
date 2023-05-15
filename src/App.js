@@ -67,8 +67,7 @@ function App() {
   }, []);
 
   return (
-    <AppContext.Provider value=// showTemp, // units,
-    "kektest">
+    <AppContext.Provider value={{ showTemp, units }}>
       <div className={css.App}>
         {loaded && (
           <div>
@@ -95,8 +94,6 @@ function App() {
               <ForecastSection
                 city={city}
                 weather={weather}
-                units={units}
-                showTemp={showTemp}
                 handleError={handleError}
               />
               <footer>

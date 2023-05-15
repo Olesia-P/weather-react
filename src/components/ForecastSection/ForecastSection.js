@@ -42,13 +42,7 @@ export default function ForecastSection({
     return (
       <section className={css.ForecastSection}>
         {days.map((it) => (
-          <Forecast
-            key={it.day}
-            forecastData={forecastData}
-            showTemp={showTemp}
-            day={it.day}
-            units={units}
-          />
+          <Forecast key={it.day} forecastData={forecastData} day={it.day} />
         ))}
       </section>
     );
