@@ -1,34 +1,50 @@
 @import "components/variables";
 
+html {
+  background-image: url('../public/background.jpg');
+  background-size: cover;
+}
+
 .App {
-  background: #fcfefe;
   font-family: "Courier New", monospace;
   font-weight: 700;
   line-height: 1.5rem;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   main {
-    margin: 1rem auto;
-    max-width: 45%;
+    max-width: 40rem;
     display: flex;
     flex-direction: column;
     font-size: $main-font-size;
+    filter: drop-shadow(0px 0px 15px silver);
+    margin-right: 2em;
 
     section {
       border: 0.6rem outset transparent;
       border-radius: 30px;
       box-shadow: $main-shadow;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0.5rem;
     }
 
     footer {
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 12pt;
+      color: $light-color;
+
+      a {
+        color: $light-color;
+      }
     }
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .App main {
     max-width: 80%;
   }
-
 }

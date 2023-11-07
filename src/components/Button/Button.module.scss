@@ -7,13 +7,13 @@
 
   &.big {
     border-radius: 0.4em;
-    padding: 0.1rem 1.5rem;
+    padding: 0.2rem 1.5rem;
     font-size: $main-font-size;
     width: 3rem;
   }
 
   &.small {
-    font-size: smaller;
+    font-size: 14pt;
     padding: 0 0.2rem;
     display: inline;
     border-radius: 0.2em;
@@ -31,15 +31,14 @@
   }
 
   &.cold {
-    background: $green-color;
-    border: 0.2rem outset $green-color;
+    background: $violet-color;
+    border: 0.2rem outset $violet-color;
     color: #000000;
 
     &.clicked {
-      border: 0.2rem inset $green-color;
+      border: 0.2rem inset $violet-color;
     }
   }
-
 
   &:hover {
     filter: brightness(115%);
@@ -50,7 +49,7 @@
   }
 
   &.cold:active {
-    border: 0.2rem inset $green-color;
+    border: 0.2rem inset $violet-color;
   }
 
   &.disabled {
@@ -58,9 +57,4 @@
     pointer-events: none;
     filter: brightness(80%);
   }
-
-  // &.clicked {
-  //   border: 0.2rem inset $accent-color;
-  // }
-
 }

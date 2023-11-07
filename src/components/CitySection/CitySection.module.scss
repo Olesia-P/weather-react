@@ -1,12 +1,11 @@
 @import "../variables";
 
 .CitySection {
-  background: #eaf6f6;
+  background: $light-color;
   text-align: center;
 
   h1 {
-    font-size: 2rem;
-    text-decoration: underline dotted;
+    font-size: 26pt;
     margin: 0.6rem 0;
   }
 
@@ -18,8 +17,6 @@
     .button {
       margin: 0 0.5rem;
     }
-
-
   }
 
   p {

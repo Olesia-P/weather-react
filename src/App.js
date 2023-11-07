@@ -70,7 +70,7 @@ function App() {
     <AppContext.Provider value={{ showTemp, units }}>
       <div className={css.App}>
         {loaded && (
-          <div>
+          <>
             {globalErrorText !== "" && (
               <PopUp
                 setGlobalErrorText={setGlobalErrorText}
@@ -98,12 +98,12 @@ function App() {
               />
               <footer>
                 <a href="https://github.com/Olesia-P/weather-react">
-                  Open-source code{" "}
-                </a>
+                  Open-source code
+                </a>{" "}
                 by Olesia Pryhun
               </footer>
             </main>
-          </div>
+          </>
         )}
         {loaded === false && <div>Loading</div>}
       </div>

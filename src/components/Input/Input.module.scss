@@ -1,4 +1,5 @@
 @import "../variables";
+
 .Input {
   &.L {
     input {
@@ -24,5 +25,6 @@
     border: none;
     border-radius: 0.4em;
     box-shadow: $main-shadow;
+    background-color: $light-color;
   }
 }

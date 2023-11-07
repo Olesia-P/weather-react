@@ -3,7 +3,12 @@
 .Forecast {
   padding: 1rem 1rem;
 
+  .iconWrap {
+    padding: 0.5rem 0;
+  }
+
   .maxTemp {
     color: #eaf6f6;
+    margin-bottom: 0.5rem;
   }
 }

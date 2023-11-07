@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import css from "./Forecast.module.scss";
 import Icons from "../Icons/Icons.js";
 import { AppContext } from "../../App";
-// import MyIcons from "../MyIcons/MyIcons.js";
 
 export default function Forecast({ forecastData, day }) {
   const { showTemp, units } = useContext(AppContext);
@@ -23,14 +22,13 @@ export default function Forecast({ forecastData, day }) {
   return (
     <div className={css.Forecast}>
       <div>{specificDay}</div>
-      <div>
+      <div className={css.iconWrap}>
         <Icons icon={icon} size={50} />
-        {/* <MyIcons icon={icon} size={50} /> */}
       </div>
       <div className={css.maxTemp}>
         {showTemp(units, Math.round(maxTemp))}°{units}
       </div>
-      <div>
+      <div className={css.minTemp}>
         {" "}
         {showTemp(units, Math.round(minTemp))}°{units}
       </div>

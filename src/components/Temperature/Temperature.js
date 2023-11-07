@@ -1,5 +1,4 @@
 import React from "react";
-// import cx from "classnames";
 import css from "./Temperature.module.scss";
 import Button from "../Button/Button.js";
 
