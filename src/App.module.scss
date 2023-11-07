@@ -9,7 +9,7 @@ html {
   font-family: "Courier New", monospace;
   font-weight: 700;
   line-height: 1.5rem;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +40,12 @@ html {
         color: $light-color;
       }
     }
+  }
+
+  .loading {
+    color: whitesmoke;
+    font-size: 30pt;
+
   }
 }
 

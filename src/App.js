@@ -105,7 +105,7 @@ function App() {
             </main>
           </>
         )}
-        {loaded === false && <div>Loading</div>}
+        {loaded === false && <div className={css.loading}>Loading</div>}
       </div>
     </AppContext.Provider>
   );
