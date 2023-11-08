@@ -1,5 +1,9 @@
 @import "components/variables";
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-image: url('../public/background.jpg');
   background-size: cover;
@@ -17,7 +21,6 @@ html {
     flex-direction: column;
     font-size: $main-font-size;
     filter: drop-shadow(0px 0px 15px silver);
-
     margin: 10% auto;
 
     section {
@@ -43,7 +46,6 @@ html {
   .loading {
     color: whitesmoke;
     font-size: 30pt;
-
   }
 }
 
