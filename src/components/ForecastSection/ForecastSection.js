@@ -47,6 +47,6 @@ export default function ForecastSection({
       </section>
     );
   } else {
-    return <div>Loading...</div>;
+    return <div className={css.loading}>Loading...</div>;
   }
 }
