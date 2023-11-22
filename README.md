@@ -24,8 +24,9 @@ You have to start somewhere! My first React project - simple, stylish... well, m
 ## What did I learn
 
 - Making **independent** and **reusable** components;
-- Making HTTP requests using **Axios**;
-- Using SCSS and **modules**;
+- Using **external API**;
+- Making **HTTP requests** using **Axios**;
+- Using **SCSS** and **CSS modules**;
 - Creating **responsive layouts**.
 - Using **libraries** (e.g. "classnames", "react-animated-weather")
 
