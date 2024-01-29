@@ -34,6 +34,7 @@ export default function CitySection({ city, handleSubmit, weather, setCity }) {
             onChange={setCity}
             fontSize="S"
             placeholder="Type a city"
+            handleSubmit={handleSubmit}
           />
         </div>
         <div className={css.button}>

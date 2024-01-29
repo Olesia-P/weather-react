@@ -56,8 +56,7 @@ function App() {
     axios.get(url).then(showWeather);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit() {
     search();
   }
 

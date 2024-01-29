@@ -2,7 +2,13 @@ import React, { useState, useEffect, useCallback } from "react";
 import css from "./Input.module.scss";
 import cx from "classnames";
 
-export default function Input({ value, onChange, fontSize, placeholder }) {
+export default function Input({
+  value,
+  onChange,
+  fontSize,
+  placeholder,
+  handleSubmit,
+}) {
   const [inputValue, setInputValue] = useState(value || "");
 
   const handleChange = useCallback(
@@ -12,6 +18,12 @@ export default function Input({ value, onChange, fontSize, placeholder }) {
     },
     [onChange]
   );
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSubmit();
+    }
+  };
 
   useEffect(() => {
     if (inputValue !== value) {
@@ -27,6 +39,9 @@ export default function Input({ value, onChange, fontSize, placeholder }) {
         autoComplete="off"
         onChange={(event) => handleChange(event.target.value)}
         value={inputValue}
+        onKeyDown={(event) => {
+          handleKeyDown(event);
+        }}
       />
     </div>
   );
