@@ -30,4 +30,4 @@ You have to start somewhere! My first React project - simple, stylish... well, m
 - Creating **responsive layouts**.
 - Using **libraries** (e.g. "classnames", "react-animated-weather")
 
-Here you can check the <a href="https://courageous-zuccutto-ed2e98.netlify.app/" target="_blank">deployed site</a>!
+Here you can check the <a href="https://weather-app-developer-pryhun.netlify.app/" target="_blank">deployed site</a>!
